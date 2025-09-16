@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Buyer Lead Intake App - Frontend
 
-First, run the development server:
+A Next.js + TypeScript frontend for managing buyer leads.
 
+## Setup Instructions
+
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Configuration
+```bash
+cp .env.local.example .env.local
+```
+Update `.env.local`:
+```
+NEXT_PUBLIC_API_URL=http://localhost:5000/api
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Start Frontend Server
+```bash
+# Development
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Production
+npm run build && npm start
+```
 
-## Learn More
+### Access the Application
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5000/api
+- Demo Accounts:
+  - User: `demo@example.com` / `demo123`
+  - Admin: `admin@example.com` / `demo123`
 
-To learn more about Next.js, take a look at the following resources:
+## Features
+- CRUD Operations
+- Search & Filter
+- Pagination
+- Validation with Zod
+- CSV Import/Export
+- User Ownership and Audit Trail
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## State Management
+- React Context for auth state
+- URL state for filters and pagination
+- Local component state
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Error Handling
+- Error Boundaries
+- Validation Errors
+- API Errors
 
-## Deploy on Vercel
+## Testing
+```bash
+npm test
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Production Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Build: `npm run build`
+- Serve: `npm start`
+- Can deploy to Vercel or Netlify
+
+## Performance Considerations
+
+- Server-side rendering
+- Pagination
+- Efficient API calls
+- Caching static assets
+
+## Security Measures
+
+- JWT authentication
+- Input validation
+- CORS configuration
+- Rate limiting
+
+## Future Enhancements
+
+- Real-time notifications
+- Mobile app
+- Analytics dashboard
+- CRM integrations
+
+## Contributing
+
+1. Fork the repo
+2. Create branch: `git checkout -b feature/new-feature`
+3. Commit: `git commit -am 'Add new feature'`
+4. Push: `git push origin feature/new-feature`
+5. Create pull request
+
+## License
+
+MIT License - see LICENSE file for details.
+
